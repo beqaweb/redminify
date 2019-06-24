@@ -28,10 +28,8 @@ class LoginScreen extends React.Component {
                         });
                 },
                 (error) => {
-                    console.log(error);
-                    console.log(error.response);
                     throw new SubmissionError({
-                        _error: 'Failed to login'
+                        _error: error._error || 'Failed to login'
                     });
                 }
             );
